@@ -1,0 +1,331 @@
+/* =========================
+   GENERAL STYLES
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: red;
+    color: #102b49;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* =========================
+   NAVIGATION BAR
+========================= */
+
+.navbar {
+    background-color: #0c2542;
+    color: white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 6%;
+}
+
+
+/* Logo */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.logo-icon {
+    background-color: #13a896;
+    color: white;
+
+    width: 25px;
+    height: 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 6px;
+}
+
+
+/* Navigation Links */
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: white;
+    font-size: 13px;
+}
+
+
+/* Navigation Buttons */
+
+.nav-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.sign-in {
+    color: white;
+    border: 1px solid #ffffff;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.join-btn {
+    background-color: #13a896;
+    color: white;
+    padding: 9px 16px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+    background-color: #0c2542;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 45px 6% 55px;
+    gap: 40px;
+}
+
+
+/* Hero Text */
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-label {
+    display: inline-block;
+    margin-bottom: 18px;
+
+    font-size: 12px;
+    color: #d1e8e5;
+}
+
+
+.hero h1 {
+    font-size: 42px;
+    line-height: 1.15;
+    margin-bottom: 18px;
+}
+
+
+.hero p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #d5deea;
+
+    max-width: 500px;
+    margin-bottom: 22px;
+}
+
+
+/* Hero Buttons */
+
+.hero-actions {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+
+.primary-btn {
+    background-color: #13a896;
+    color: white;
+
+    padding: 11px 18px;
+    border-radius: 5px;
+
+    font-size: 13px;
+}
+
+
+.secondary-btn {
+    background-color: white;
+    color: #0c2542;
+
+    padding: 11px 18px;
+    border-radius: 5px;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   SEARCH BAR
+========================= */
+
+.search-bar {
+    background-color: white;
+    border-radius: 7px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 5px;
+    max-width: 600px;
+}
+
+
+.search-bar input {
+    flex: 1;
+
+    border: none;
+    outline: none;
+
+    padding: 12px;
+    font-size: 12px;
+
+    min-width: 0;
+}
+
+
+.search-bar input:first-child {
+    border-right: 1px solid #dddddd;
+}
+
+
+.search-bar button {
+    background-color: #13a896;
+    color: white;
+
+    border: none;
+    border-radius: 5px;
+
+    padding: 11px 18px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   HERO IMAGE
+========================= */
+
+.hero-image {
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.image-placeholder {
+    background-color: #d7efeb;
+
+    width: 100%;
+    max-width: 500px;
+    height: 260px;
+
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #537e79;
+    font-size: 12px;
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .hero {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-image {
+        width: 100%;
+    }
+
+    .image-placeholder {
+        max-width: 100%;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 18px 5%;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        padding: 35px 5%;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero-actions {
+        flex-wrap: wrap;
+    }
+
+    .search-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-bar input:first-child {
+        border-right: none;
+        border-bottom: 1px solid #dddddd;
+    }
+
+    .search-bar button {
+        width: 100%;
+    }
+
+    .image-placeholder {
+        height: 200px;
+    }
+
+}
