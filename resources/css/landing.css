@@ -82,13 +82,20 @@ a {
     gap: 15px;
 }
 
+
 .sign-in {
+    background: transparent;
     color: white;
     border: 1px solid #ffffff;
     padding: 8px 16px;
     border-radius: 5px;
     font-size: 12px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
 }
+
+
 
 .join-btn {
     background-color: #13a896;
@@ -328,4 +335,19 @@ a {
         height: 200px;
     }
 
+}
+
+.nav-buttons form {
+    margin: 0;
+}
+
+.nav-buttons button.sign-in {
+    background-color: transparent !important;
+    color: white !important;
+    border: 1px solid white !important;
+    padding: 8px 16px !important;
+    border-radius: 5px !important;
+    font-size: 12px !important;
+    cursor: pointer;
+    box-shadow: none !important;
 }

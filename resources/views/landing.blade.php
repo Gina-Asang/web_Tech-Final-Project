@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="{{ asset('css/landing.css') }}">
 </head>
 <body>
+@if (session('success'))
+    <div class="success-message">
+        {{ session('success') }}
+    </div>
+@endif
 
     <!-- Navigation Bar -->
     <nav class="navbar">
@@ -24,10 +29,31 @@
             <a href="#">Community</a>
         </div>
 
+
         <div class="nav-buttons">
-            <a href="#" class="sign-in">Sign In</a>
-            <a href="#" class="join-btn">Join SkillConnect</a>
+            @auth
+                <span class="welcome-user">
+                    Welcome, {{ Auth::user()->name }}
+                </span>
+
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit" class="sign-in">Logout</button>
+                </form>
+
+            @else
+                <a href="{{ route('login') }}" class="sign-in">Sign In</a>
+                <a href="{{ route('register') }}" class="cta-primary">
+                    Join SkillConnect
+                </a>
+            @endauth
         </div>
+
+
+
+
+
+
 
     </nav>
 

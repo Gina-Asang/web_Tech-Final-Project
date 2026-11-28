@@ -1065,3 +1065,18 @@ a {
         flex-wrap: wrap;
     }
 }
+
+.nav-buttons form {
+    margin: 0;
+}
+
+.nav-buttons button.sign-in {
+    background-color: transparent !important;
+    color: white !important;
+    border: 1px solid white !important;
+    padding: 8px 16px !important;
+    border-radius: 5px !important;
+    font-size: 12px !important;
+    cursor: pointer;
+    box-shadow: none !important;
+}
