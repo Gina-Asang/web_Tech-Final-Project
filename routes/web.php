@@ -1,10 +1,11 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ResetPasswordController;
+use App\Http\Controllers\IndividualProfileController;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('landing');
@@ -36,4 +37,16 @@ Route::get('/reset-password/{token}', [ResetPasswordController::class, 'showRese
 
 Route::post('/reset-password', [ResetPasswordController::class, 'resetPassword'])
     ->name('password.update');
-    
+
+// Individual Profile Routes
+
+Route::middleware(['auth', 'account.type:individual'])->group(function () {
+    Route::get('/profile', [IndividualProfileController::class, 'show'])
+        ->name('profile.show');
+
+    Route::get('/profile/edit', [IndividualProfileController::class, 'edit'])
+        ->name('profile.edit');
+
+    Route::put('/profile', [IndividualProfileController::class, 'update'])
+        ->name('profile.update');
+});

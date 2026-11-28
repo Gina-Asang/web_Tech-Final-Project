@@ -22,7 +22,7 @@ class RegisterController extends Controller
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email',
-            'phone' => 'required|string|max:20',
+            'phone' => 'required|string|max:20|unique:users,phone',
             'account_type' => 'required|in:individual,business',
 
             // Organization name is only required for business accounts

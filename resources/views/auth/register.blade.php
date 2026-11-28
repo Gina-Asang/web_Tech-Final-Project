@@ -319,7 +319,7 @@
 
             <div class="register-footer">
                 Already have an account?
-                <a href="#">Sign in</a>
+                <a href="{{ route('login') }}">Sign In</a>
             </div>
 
         </div>
